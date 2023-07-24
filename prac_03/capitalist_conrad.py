@@ -38,4 +38,8 @@ while MIN_PRICE <= price <= MAX_PRICE:
     price *= (1 + price_change)
     number_of_days += 1
     print(f"on day {number_of_days} ${price:,.2f}")
+
+    out_file.writelines(f"on day {number_of_days} ${price:,.2f}\n")
+out_file.close()
+  
     
