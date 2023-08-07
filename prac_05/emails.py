@@ -1,7 +1,7 @@
 """
 emails
 estimated time: 30 minutes
-actual time:  minutes
+actual time:  25 minutes
 
 """
 def main():
