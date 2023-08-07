@@ -18,3 +18,6 @@ while colour_name != "":
     else:
         print("Invalid colour name")
     colour_name = input("Enter colour name: ").upper()
+
+
+print("Thank you for using the hex colour code lookup program.")
