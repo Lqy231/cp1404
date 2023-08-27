@@ -14,5 +14,19 @@ def main():
     print(f"Car has fuel: {my_car.fuel}")
     print(my_car)
 
+    # Create a new Car object called "limo" that is initialised with 100 units of fuel.
+    limo = Car(100)
+
+    # Add 20 more units of fuel to this new car object using the add method.
+    limo.add_fuel(20)
+    # Print the amount of fuel in the car.
+    print(f"Car has fuel: {limo.fuel}")
+    # Attempt to drive the car 115 km using the drive method.
+    limo.drive(115)
+    print(limo)
+    limo.set_name("A Good Car")
+    # print the str representation of the car object.
+    print(limo)
+
 
 main()
