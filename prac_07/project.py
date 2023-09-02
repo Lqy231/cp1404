@@ -14,7 +14,7 @@ class Project:
 
     def __str__(self):
         """return string representation of project"""
-        return "{}, start : {}, priority {}, estimate: {}, completion: {}".format(self.name, self.start_date,  self.priority,self.cost, self.completed)
+        return "{}, start : {}, priority {}, estimate: $ {}, completion: {}%".format(self.name, self.start_date,  self.priority,self.cost, self.completed)
 
     def __repr__(self):
         """return string representation of project"""
