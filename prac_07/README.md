@@ -7,5 +7,5 @@ this is a repository about cp1404 practical 7.
 - **Simplicity**: Clean code should be simple, concise, and expressive. It should follow a set of conventions, standards, and practices that make it easy to read and follow. Avoiding complexity, redundancy, and other code smells can help make the code easier to maintain, debug, and modify.
 - **Clear Structure**: Clean code should have a logical and clearly structured order of execution. The connections between different parts of the code should be obvious, and the task or role of each class, function, method, and variable should be immediately understandable⁴.
 
-https://github.com/CP1404/Starter/wiki/Programming-Patterns
-https://github.com/CP1404/Practicals/tree/master
+>https://github.com/CP1404/Starter/wiki/Programming-Patterns
+>https://github.com/CP1404/Practicals/tree/master
