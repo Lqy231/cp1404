@@ -74,11 +74,11 @@ def display_statistics(projects):
     print("Incomplete projects:")
     incomplete_projects.sort()
     for i, project in enumerate(incomplete_projects):
-        print("{}. {}".format(i + 1, project))
+        print("{}. {}".format(i, project))
     print("Completed projects:")
     completed_projects.sort()
     for i, project in enumerate(completed_projects):
-        print("{}. {}".format(i + 1, project))
+        print("{}. {}".format(i, project))
 
 
 def get_valid_filename():
@@ -109,24 +109,54 @@ def save_projects(projects):
 
 def filter_projects_by_date(projects):
     """Ask the user for a date and display only projects that start after that date, sorted by date"""
-    while True:  # get valid date
+    while True: # get a valid date
         try:
-            date = datetime.datetime.strptime(input("Start date: "), "%d/%m/%Y").date()
+            filter_date = datetime.datetime.strptime(input("Enter date: "), "%d/%m/%Y").date()
             break
         except ValueError:
             print("Invalid date")
-    filtered_projects = []  # filter projects
+    
+    filtered_projects = []
+    date_list = []
+
     for project in projects:
-        if project.start_date > date:
-            filtered_projects.append(project)
-    #sort projects by itemgetter 
-    sorted_projects = sorted(filtered_projects, key=Project.start_date)
-        
-    print("Filtered projects:")
+        if project.start_date > filter_date:
+            
+            date_list.append(project.start_date)
+    date_list.sort()
+    
+    # sort filtered_projects
+    for date in date_list:
+        for project in projects:
+            if project.start_date == date:
+                filtered_projects.append(project)
+    # display filtered_projects
+    print("Projects starting after {}:".format(filter_date.strftime("%d/%m/%Y")))
     for i, project in enumerate(filtered_projects):
-        print("{}. {}".format(i + 1, project))
+        print("{}. {}".format(i, project))
 
 
+def add_project(projects):
+    """Add a new project"""
+    print("let,s add new project")
+    name = get_valid_name()
+    start_date = get_valid_date()
+    priority = get_valid_priority()
+    cost = get_valid_cost()
+    completed = get_valid_completed()
+    projects.append(Project(name, start_date, priority, cost, completed))
+    print("{} added to projects".format(name))
+
+
+def get_valid_name():
+    """Get a valid project name from the user"""
+    while True:
+        name = input("Name: ")
+        if name == "":
+            print("Invalid name")
+        else:
+            break
+    return name
 
 main()
 # display_statistics(projects)

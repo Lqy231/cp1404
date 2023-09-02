@@ -14,7 +14,7 @@ class Project:
 
     def __str__(self):
         """return string representation of project"""
-        return "{}, {}, {}, {}, {}".format(self.name, self.start_date, self.cost, self.priority, self.completed)
+        return "{}, start : {}, priority {}, estimate: {}, completion: {}".format(self.name, self.start_date,  self.priority,self.cost, self.completed)
 
     def __repr__(self):
         """return string representation of project"""
@@ -24,5 +24,8 @@ class Project:
         """less than operator for priority"""
         return self.priority < other.priority
     
+    def time_compare(self, other):
+        """less than operator for priority"""
+        return self.start_date < other.start_date
 
 
